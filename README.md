@@ -1,2 +1,2 @@
-# valendynamicas
+# valendynamics
 sitio web ficticio

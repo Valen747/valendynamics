@@ -5,10 +5,9 @@
    BASE
    ========================= */
 @layer base {
-  
   html {
-    scroll-behavior: smooth;                       /* Smooth scroll */
-    color-scheme: light dark;                     
+    scroll-behavior: smooth;
+    color-scheme: light dark;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -16,54 +15,40 @@
 
   body {
     @apply m-0 min-w-[320px] min-h-screen bg-neutral-900 text-white;
-    /* Si usas la fuente Orbitron, déjala primero; si no, queda system-ui */
     font-family: 'Orbitron', system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
   }
 
-  /* Estados de tema claro (opcional) */
   @media (prefers-color-scheme: light) {
     body { @apply bg-white text-neutral-900; }
     a:hover { @apply text-indigo-500; }
     button.btn-primary { @apply bg-sky-600 hover:bg-sky-700; }
   }
 
-  a {
-    @apply font-medium text-indigo-400 underline-offset-2 decoration-transparent transition-colors;
-  }
+  a { @apply font-medium text-indigo-400 underline-offset-2 decoration-transparent transition-colors; }
   a:hover { @apply text-indigo-300 decoration-indigo-300; }
 
   h1 { @apply text-4xl md:text-5xl leading-tight font-extrabold; }
   h2 { @apply text-2xl md:text-3xl leading-snug font-bold text-sky-400; }
 
-  /* Reset mínimos */
   *, *::before, *::after { box-sizing: border-box; }
 }
 
 /* =========================
-   COMPONENTES REUTILIZABLES
+   COMPONENTES
    ========================= */
 @layer components {
-  /* Contenedor centrado */
-  .container-px { @apply container mx-auto px-4;}
-
   /* NAVBAR */
-  .navbar {
-    @apply sticky top-0 z-50 bg-neutral-900/85 backdrop-blur border-b border-neutral-800;
-  }
-  .nav-link {
-    @apply inline-block px-3 py-2 text-sm md:text-base font-semibold text-neutral-300 hover:text-white transition-colors;
-  }
-  .nav-link--active {
-    @apply text-white relative;
-  }
+  .navbar { @apply sticky top-0 z-50 bg-neutral-900/85 backdrop-blur border-b border-neutral-800; }
+  .nav-link { @apply inline-block px-3 py-2 text-sm md:text-base font-semibold text-neutral-300 hover:text-white transition-colors; }
+  .nav-link--active { @apply text-white relative; }
   .nav-link--active::after {
     content: "";
     @apply absolute left-2 right-2 -bottom-1 h-0.5 bg-sky-500 rounded-full;
   }
 
-  /* HEADER con video de fondo y overlay */
+  /* HEADER */
   .header-wrap { @apply relative overflow-hidden text-center pt-24 md:pt-28; height: 300px; }
   .header-video { @apply absolute inset-0 w-full h-full object-cover -z-10; }
   .header-overlay { @apply absolute inset-0 bg-gradient-to-b from-black/50 to-black/70 -z-10; }
@@ -71,14 +56,22 @@
   .header-subtitle { @apply mt-2 text-lg md:text-2xl drop-shadow; }
 
   /* SECCIONES */
-  .section { @apply container-px py-8 border-b border-neutral-800; }
-  .section-narrow { @apply max-w-3xl mx-auto; }
+  .section { @apply container mx-auto px-4 py-8 border-b border-neutral-800; }
+  .section-narrow { @apply max-w-3xl mx-auto px-4; }
   .muted { @apply text-neutral-300; }
 
-  /* BOTONES */
-  .btn { @apply inline-flex items-center justify-center px-5 py-2 rounded-md font-semibold transition-colors; }
-  .btn-primary { @apply btn bg-sky-600 hover:bg-sky-700 text-white; }
-  .btn-ghost { @apply btn bg-transparent hover:bg-neutral-800 text-neutral-200; }
+  /* BOTONES (sin @apply a clases personalizadas) */
+  .btn {
+    @apply inline-flex items-center justify-center px-5 py-2 rounded-md font-semibold transition-colors;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-5 py-2 rounded-md font-semibold
+           transition-colors bg-sky-600 hover:bg-sky-700 text-white;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-5 py-2 rounded-md font-semibold
+           transition-colors bg-transparent hover:bg-neutral-800 text-neutral-200;
+  }
 
   /* FORMULARIOS */
   .form-label { @apply block font-semibold mt-4; }
@@ -86,9 +79,13 @@
     @apply mt-1 w-full rounded-md border-0 bg-neutral-800 text-white px-3 py-2
            focus:outline-none focus:ring-2 focus:ring-sky-600;
   }
-  .form-textarea { @apply form-input resize-y; }
+  /* ⬇️ FIX: duplicamos utilidades, no usamos @apply form-input */
+  .form-textarea {
+    @apply mt-1 w-full rounded-md border-0 bg-neutral-800 text-white px-3 py-2
+           focus:outline-none focus:ring-2 focus:ring-sky-600 resize-y;
+  }
 
-  /* CARRUSEL (Bootstrap) contenedor visual */
+  
   .carousel-shell { @apply max-w-[700px] mx-auto my-6 rounded-xl overflow-hidden shadow-2xl; }
 
   /* FOOTER */
@@ -101,7 +98,9 @@
   }
 }
 
-
+/* =========================
+   ANIMACIONES
+   ========================= */
 @keyframes fadeIn { from {opacity:0; transform: translateY(-8px)} to {opacity:1; transform: translateY(0)} }
 @keyframes fadeInUp { from {opacity:0; transform: translateY(10px)} to {opacity:1; transform: translateY(0)} }
 

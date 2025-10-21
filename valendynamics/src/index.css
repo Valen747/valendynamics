@@ -1,9 +1,6 @@
-/* Tailwind v4 */
+
 @import "tailwindcss";
 
-/* =========================
-   BASE
-   ========================= */
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -35,9 +32,7 @@
   *, *::before, *::after { box-sizing: border-box; }
 }
 
-/* =========================
-   COMPONENTES
-   ========================= */
+
 @layer components {
   /* NAVBAR */
   .navbar { @apply sticky top-0 z-50 bg-neutral-900/85 backdrop-blur border-b border-neutral-800; }
@@ -48,14 +43,14 @@
     @apply absolute left-2 right-2 -bottom-1 h-0.5 bg-sky-500 rounded-full;
   }
 
-  /* HEADER */
+
   .header-wrap { @apply relative overflow-hidden text-center pt-24 md:pt-28; height: 300px; }
   .header-video { @apply absolute inset-0 w-full h-full object-cover -z-10; }
   .header-overlay { @apply absolute inset-0 bg-gradient-to-b from-black/50 to-black/70 -z-10; }
   .header-title { @apply uppercase drop-shadow; }
   .header-subtitle { @apply mt-2 text-lg md:text-2xl drop-shadow; }
 
-  /* SECCIONES */
+ 
   .section { @apply container mx-auto px-4 py-8 border-b border-neutral-800; }
   .section-narrow { @apply max-w-3xl mx-auto px-4; }
   .muted { @apply text-neutral-300; }
@@ -73,13 +68,13 @@
            transition-colors bg-transparent hover:bg-neutral-800 text-neutral-200;
   }
 
-  /* FORMULARIOS */
+  
   .form-label { @apply block font-semibold mt-4; }
   .form-input {
     @apply mt-1 w-full rounded-md border-0 bg-neutral-800 text-white px-3 py-2
            focus:outline-none focus:ring-2 focus:ring-sky-600;
   }
-  /* ⬇️ FIX: duplicamos utilidades, no usamos @apply form-input */
+  
   .form-textarea {
     @apply mt-1 w-full rounded-md border-0 bg-neutral-800 text-white px-3 py-2
            focus:outline-none focus:ring-2 focus:ring-sky-600 resize-y;
@@ -88,19 +83,17 @@
   
   .carousel-shell { @apply max-w-[700px] mx-auto my-6 rounded-xl overflow-hidden shadow-2xl; }
 
-  /* FOOTER */
+
   .footer { @apply bg-neutral-900 text-center py-6 text-sm text-neutral-400; }
 
-  /* BOTÓN “ARRIBA” */
+ 
   .btn-top {
     @apply fixed bottom-5 right-5 px-3 py-2 text-xl bg-sky-600 hover:bg-sky-700 text-white rounded-md shadow-lg;
     z-index: 200;
   }
 }
 
-/* =========================
-   ANIMACIONES
-   ========================= */
+
 @keyframes fadeIn { from {opacity:0; transform: translateY(-8px)} to {opacity:1; transform: translateY(0)} }
 @keyframes fadeInUp { from {opacity:0; transform: translateY(10px)} to {opacity:1; transform: translateY(0)} }
 

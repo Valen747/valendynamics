@@ -65,4 +65,8 @@ Se implementó un script ligero para la navegabilidad:
 * **Botón "Volver Arriba" (`#btnTop`):**
     * **Evento:** `window.onscroll`.
     * **Lógica:** Detecta si el usuario ha bajado más de 100px. Si es así, cambia el `display` del botón a `block`, permitiendo un retorno rápido al menú principal.
+## 5. Cronograma de Desarrollo (Gantt)
 
+A continuación se detalla el plan de trabajo estimado para un ciclo de desarrollo de 2 semanas.
+
+![Diagrama de Gantt del Proyecto](GANTT.png)

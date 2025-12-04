@@ -1,7 +1,7 @@
 # Documentación Técnica del Proyecto Web: Valen-Dynamics
 
 ## 1. Visión General del Proyecto
-**Objetivo:** Desarrollar una "Landing Page" (página de aterrizaje) de alto impacto visual para **Valen-Dynamics**, una empresa de ingeniería aeroespacial. 
+**Objetivo:** Desarrollar una "Landing Page" de alto impacto visual para **Valen-Dynamics**, una empresa de ingeniería aeroespacial. 
 **Estilo:** "Futurismo Industrial". Se busca transmitir tecnología, sigilo (*stealth*) y solidez institucional.
 
 ### Stack Tecnológico
